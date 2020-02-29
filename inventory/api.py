@@ -5,6 +5,6 @@ from .serializers import InventorySerilizer
 class InventoryViewSet(viewsets.ModelViewSet):
     queryset = Inventory.objects.all()
     permission_classes = {
-        permissions.AllowAny
+        permissions.IsAuthenticatedOrReadOnly
     }
     serializer_class = InventorySerilizer
